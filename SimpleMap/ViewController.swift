@@ -12,11 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    let modelInfo = ModelInfo()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        for info in modelInfo.info.first!{
+            mapView.addAnnotation(info)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

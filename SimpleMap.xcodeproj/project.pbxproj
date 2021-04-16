@@ -13,6 +13,8 @@
 		ED3F63D62628909B00390824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3F63D42628909B00390824 /* Main.storyboard */; };
 		ED3F63D82628909D00390824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3F63D72628909D00390824 /* Assets.xcassets */; };
 		ED3F63DB2628909D00390824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3F63D92628909D00390824 /* LaunchScreen.storyboard */; };
+		ED3F63E426297E9800390824 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F63E326297E9800390824 /* Info.swift */; };
+		ED3F63E82629808A00390824 /* ModelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F63E72629808A00390824 /* ModelInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		ED3F63D72628909D00390824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED3F63DA2628909D00390824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3F63DC2628909D00390824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED3F63E326297E9800390824 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		ED3F63E72629808A00390824 /* ModelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				ED3F63D72628909D00390824 /* Assets.xcassets */,
 				ED3F63D92628909D00390824 /* LaunchScreen.storyboard */,
 				ED3F63DC2628909D00390824 /* Info.plist */,
+				ED3F63E326297E9800390824 /* Info.swift */,
+				ED3F63E72629808A00390824 /* ModelInfo.swift */,
 			);
 			path = SimpleMap;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3F63E82629808A00390824 /* ModelInfo.swift in Sources */,
+				ED3F63E426297E9800390824 /* Info.swift in Sources */,
 				ED3F63D32628909B00390824 /* ViewController.swift in Sources */,
 				ED3F63CF2628909B00390824 /* AppDelegate.swift in Sources */,
 				ED3F63D12628909B00390824 /* SceneDelegate.swift in Sources */,
