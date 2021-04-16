@@ -17,18 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hg6-lH-oVL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hg6-lH-oVL" secondAttribute="bottom" id="2Ys-MP-oe3"/>
-                            <constraint firstItem="Hg6-lH-oVL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3EL-oM-JnI"/>
+                            <constraint firstItem="Hg6-lH-oVL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3EL-oM-JnI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hg6-lH-oVL" secondAttribute="trailing" id="VNe-Po-2Ya"/>
                             <constraint firstItem="Hg6-lH-oVL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xye-fr-aXs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Hg6-lH-oVL" id="fKd-YR-j2C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
