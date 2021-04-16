@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mapView.delegate = self
         for info in modelInfo.info.first!{
             mapView.addAnnotation(info)
         }
@@ -90,5 +91,55 @@ extension ViewController: CLLocationManagerDelegate {
         func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus){
             checkAutorization()
         }
+    }
+}
+
+
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? Info else {return nil}
+        
+        var viewMarker: MKMarkerAnnotationView
+        let idView = "marker"
+        if let view = mapView.dequeueReusableAnnotationView(withIdentifier: idView) as? MKMarkerAnnotationView {
+            view.annotation = annotation
+            viewMarker = view
+        } else  {
+            viewMarker = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: idView)
+            viewMarker.canShowCallout = true
+            viewMarker.calloutOffset = CGPoint(x: 0, y: 6)
+            viewMarker.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return viewMarker
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let coordinate = locationManager.location?.coordinate else { return }
+        self.mapView.removeOverlays(mapView.overlays)
+        let info = view.annotation as! Info
+        
+        let startpoint = MKPlacemark(coordinate: coordinate)
+        let endpoint =  MKPlacemark(coordinate: info.coordinate)
+        
+        let reqest = MKDirections.Request()
+        reqest.source = MKMapItem(placemark: startpoint)
+        reqest.destination = MKMapItem(placemark: endpoint)
+        reqest.transportType = .automobile
+        
+        let direction = MKDirections(request: reqest)
+        
+        direction.calculate { (response, error) in
+            guard let response = response else { return }
+            for route in response.routes {
+                self.mapView.addOverlay(route.polyline)
+            }
+        }
+    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let render = MKPolylineRenderer(overlay: overlay)
+        render.strokeColor = .red
+        render.lineWidth = 4
+        
+        return render
     }
 }

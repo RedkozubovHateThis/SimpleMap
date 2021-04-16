@@ -16,9 +16,9 @@ class ModelInfo {
     }
 
     func setup() {
-        let firstDot = Info(title: "Работа", coordinate: CLLocationCoordinate2D(latitude: 37.787600, longitude: -122.406417))
+        let firstDot = Info(title: "Работа", coordinate: CLLocationCoordinate2D(latitude: 48.636317, longitude: 44.434000))
         
-        let secondDot = Info(title: "Дом", coordinate: CLLocationCoordinate2D(latitude: 37.785100, longitude: -122.405700))
+        let secondDot = Info(title: "Дом", coordinate: CLLocationCoordinate2D(latitude: 48.767623, longitude: 44.498221))
         
         let locationArray = [firstDot, secondDot]
         
